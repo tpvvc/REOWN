@@ -1,0 +1,12 @@
+(cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF'
+diff --git a/reown-app/wrangler.toml b/reown-app/wrangler.toml
+--- a/reown-app/wrangler.toml
++++ b/reown-app/wrangler.toml
+@@ -0,0 +1,5 @@
++name = "reown-app"
++compatibility_date = "2025-10-03"
++compatibility_flags = ["nodejs_compat"]
++pages_build_output_dir = ".vercel/output/static"
++
+EOF
+)
