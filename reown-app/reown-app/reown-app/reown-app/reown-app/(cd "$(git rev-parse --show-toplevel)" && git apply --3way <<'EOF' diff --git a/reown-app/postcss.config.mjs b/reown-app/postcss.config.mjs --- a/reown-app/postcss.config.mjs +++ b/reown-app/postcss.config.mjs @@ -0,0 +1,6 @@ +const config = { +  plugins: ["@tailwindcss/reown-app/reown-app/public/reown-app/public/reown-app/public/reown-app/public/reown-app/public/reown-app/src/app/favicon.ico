@@ -1,0 +1,6 @@
+(cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF'
+diff --git a/reown-app/src/app/favicon.ico b/reown-app/src/app/favicon.ico
+--- a/reown-app/src/app/favicon.ico
++++ b/reown-app/src/app/favicon.ico
+@@ -0,0 +1,31 @@
++
