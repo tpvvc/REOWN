@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
+    "dev": "dotenv -e .env.local -- next dev --turbopack",
+    "build": "dotenv -e .env.production -- next build --turbopack",
+    "start": "dotenv -- next start",
     "lint": "eslint",
-    "build:cf": "next-on-pages",
-    "preview:cf": "wrangler pages dev .vercel/output/static --compatibility-date=2025-10-03 --compatibility-flags=nodejs_compat --port 8788",
-    "deploy:cf": "wrangler pages deploy .vercel/output/static --project-name reown-app"
+    "build:cf": "dotenv -e .env.production -- next-on-pages",
+    "preview:cf": "dotenv -- wrangler pages dev .vercel/output/static --compatibility-date=2025-10-03 --compatibility-flags=nodejs_compat --port 8788",
+    "deploy:cf": "dotenv -- wrangler pages deploy .vercel/output/static --project-name reown-app"
   },
   "dependencies": {
     "next": "15.5.2",
@@ -23,6 +23,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv-cli": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "tailwindcss": "^4",
